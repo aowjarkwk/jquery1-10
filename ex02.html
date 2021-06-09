@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>onload함수</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //ES6
+        window.onload = function(){
+            console.log('es6 문서로딩 완료!');
+        };
+        //jquery
+        $(document).ready(
+        function(){
+            console.log('jquery 문서로딩 완료!')
+        }
+        );
+        //좀 더 간결한 표현
+        $( function() {
+            console.log("jquery2 문서로딩 완료!")
+        });
+    </script>
+</head>
+<body>
+    <h1>onload 함수</h1>    
+</body>
+</html>

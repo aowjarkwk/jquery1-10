@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>문서객체 선택</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //JS에서 문서선택
+        // getElementById, getElementsByClass,byName,byTag
+        // css이용 - querySelector, querySelectorAll
+        // jquery
+        $(function(){
+            // 태그 선택
+            // $('h1').css('backgroundColor','orange');
+            $('h1').css('background-color','cyan');
+            // 여러 태그 선택
+            $('p, h1').css('background-color','yellow');
+            // 아이디 선택
+            $('#id-h1').css('background-color','red');
+            // 클래스 선택
+            $('.class-h1').css('background-color','pink');
+            // 클래스 이름이2개일때
+            $('.item.select').css('background-color','orange').css('color','white');
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>Lorem ipsum</h1>
+    <p>Lorem ipsum dolor sit amet</p>
+    <h2>Lorem ipsum</h2>
+    <h1 id="id-h1">Lorem ipsum</h1>
+    <h1 class="class-h1 select">Lorem ipsum</h1>
+    <h1 class="item select choice one">Lorem ipsum</h1>
+</body>
+
+</html>
