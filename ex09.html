@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>jquery에서 innerHTML, innerTEXT 제어하기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //         innerHTML, innerText
+        // jQuery : html(), text() 함수
+        $(function () {
+            $('h1').eq(0).html("<ins>Header-0 선택됨.</ins>");
+            console.log($('h1').eq(0).html());
+            $('h1').eq(1).text("<ins>Header-0 선택됨.</ins>");
+            console.log($('h1').eq(1).text());
+        });
+    </script>
+</head>
+
+<body>
+    <h1 class="first">Header-0</h1>
+    <h1 class="second">Header-1</h1>
+    <h1 class="third">Header-2</h1>
+</body>
+
+</html>

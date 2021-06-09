@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // CSS - nth-child(1) : 첫번째
+        // JQuery 선택자
+        // eq()함수 : index지정 가능 eq(0):첫번째
+        // first() : 첫번째
+        // last() : 마지막번째
+        // add() : 객체 선택 추가
+        $(function () {
+            $('h3').eq(0).css('color','red');
+            $('h3').eq(1).css('color','blue');
+            $('h3').eq(2).css('color','yellow');
+            $('h3').eq(3).css('color','orange');
+            $('h3').first().css('background','cyan');
+            $('h3').last().css('background','cyan');
+            // 선택요소를 추가 add()
+            $('h3').first().add('h2').css('color','green');
+        });
+    </script>
+</head>
+
+<body>
+    <h3>Header-0</h3>
+    <h3>Header-1</h3>
+    <h3>Header-2</h3>
+    <h2>Header-3</h2>
+    <h3>Header-4</h3>
+    <h3>Header-5</h3>
+</body>
+
+</html>

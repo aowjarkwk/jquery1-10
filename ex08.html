@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--                 --- request ---* -->
+    <!-- 통신은 클라이언트 *--response---- 서버 -->
+    <!--      (서비스요청자)    (서비스제공자) -->
+    <!-- 통신방식 : 1. HTTP통신 : 웹앱 90%이상 -->
+    <!--           2. TCP/IP(소켓)통신 : 10% 게임,채팅 -->
+    <!-- HTTP통신 : 클라 요청 Request GET,POST -->
+    <!--            서버 응답 Response HTML, XML, JSON -->
+    <!-- XML과 JSON -->
+    <!-- 구글에서 "xml to json"검색 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // XML 파싱(Parse)
+        var xml = '';
+        xml += '<friends>';
+        xml += '<friend>';
+        xml += '<name>홍길동</name>';
+        xml += '<age>30</age>';
+        xml += '</friend>';
+        xml += '<friend>';
+        xml += '<name>변사또</name>';
+        xml += '<age>40</age>';
+        xml += '</friend>';
+        xml += '<friend>';
+        xml += '<name>춘향이</name>';
+        xml += '<age>18</age>';
+        xml += '</friend>';
+        xml += '</friends>';
+        var json = '';
+        json += '{';
+        json += '"friends": {';
+        json += '"friend": [';
+        json += '{';
+        json += '"name": "홍길동",';
+        json += '"age": "30"';
+        json += '},';
+        json += '{';
+        json += '"name": "변사또",';
+        json += '"age": "40"';
+        json += '},';
+        json += '{';
+        json += '"name": "춘향이",';
+        json += '"age": "18"';
+        json += '}';
+        json += ']';
+        json += '}';
+        json += '}';
+        $(function () {
+            //XML 파싱(분석)하는 함수
+            var xmlDoc = $.parseXML(xml);
+            console.log(xmlDoc);
+            // 문서객체 찾기 find()
+            //index는 배열의 인덱스 0,1,2 이렇게 매 루프마다 들어옴
+            //item은 문서객체로 들어옴.
+            $(xmlDoc).find("friend").each(function (index, item) {
+                var output = '';
+                output += '<div>';
+                output += ' <h1>' + $(item).find('name').text() + '</h1>';
+                output += ' <h2>' + $(item).find('age').text() + '</h2>';
+                output += '</div>';
+                document.body.innerHTML += output;
+            });
+            document.body.innerHTML += '<br>';
+            //JSON을 파싱(분석)하는 함수
+            var jsonObj = $.parseJSON(json);
+            console.log(jsonObj);
+            var arrayFriend = jsonObj.friends.friend;
+            console.log(arrayFriend);
+            arrayFriend.forEach(function (item) {
+                console.log(item);
+                var output = '';
+                output += '<div>';
+                output += ' <h1>' + item.name + '</h1>';
+                output += ' <h2>' + item.age + '</h2>';
+                output += '</div>';
+                document.body.innerHTML += output;
+            });
+        });
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
